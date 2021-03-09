@@ -4,6 +4,15 @@
 # time: 2020-02-12 12:57
 import pandas as pd
 
+import os, sys
+
+# from pathlib import Path
+
+# project_path = Path(__file__).parent
+project_path = "/data/bigdata/Gavin/bert_doc_binary_classification"
+sys.path.insert(0, project_path)
+
+print("project path", project_path)
 
 # 读取txt文件
 def read_txt_file(file_path):
@@ -20,11 +29,11 @@ def read_txt_file(file_path):
     return labels, texts
 
 
-file_path = 'data/train.txt'
+file_path = os.path.join(project_path, 'data/train.txt')
 labels, texts = read_txt_file(file_path)
 train_df = pd.DataFrame({'label': labels, 'text': texts})
 
-file_path = 'data/test.txt'
+file_path = os.path.join(project_path, 'data/test.txt')
 labels, texts = read_txt_file(file_path)
 test_df = pd.DataFrame({'label': labels, 'text': texts})
 

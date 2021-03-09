@@ -3,9 +3,15 @@
 # place: Pudong Shanghai
 # time: 2020-02-12 13:37
 
-import os
+import os, sys
 # 使用GPU训练
 # os.environ["CUDA_VISIBLE_DEVICES"] = "4,5,6,7,8"
+
+# from pathlib import Path
+
+# project_path = Path(__file__).resolve().parent
+project_path = "/data/bigdata/Gavin/bert_doc_binary_classification"
+sys.path.insert(0, project_path)
 
 import numpy as np
 from load_data import train_df, test_df
