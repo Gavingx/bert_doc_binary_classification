@@ -1,3 +1,10 @@
+from pathlib import Path
+import sys
+
+project_path = Path(__file__).resolve().parent.parent
+print("project_path", project_path)
+sys.path.insert(0, project_path)
+
 from bert.graph import import_tf
 from bert import modeling
 from bert import tokenization
